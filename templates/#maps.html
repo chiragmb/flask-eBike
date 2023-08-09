@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Route Map</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/leaflet.css"
+      integrity="sha512-Brr6YYx3q5h6vXG6oqsDTLz2LZQzy1hhsFr8nF5U6o5axq3cPyeKXAJWZb1//ZLcznnZbQfC8NBaQRRx/mHBUw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/leaflet.js"
+      integrity="sha512-B4uIN7j3mAGwZePlbWmSAdS0zjQ2XGrcE/UsKj2HpZQmeMBRfN8iFjO6v3ss6O5U5rX8WmdoAzpwv0nFZSZMAA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+  </head>
+  <body>
+    <form method="POST" action="{{ url_for('route_map') }}">
+      <label for="source">Source:</label>
+      <input
+        type="text"
+        id="source"
+        name="source"
+        placeholder="Enter source address"
+      />
+
+      <label for="destination">Destination:</label>
+      <input
+        type="text"
+        id="destination"
+        name="destination"
+        placeholder="Enter destination address"
+      />
+
+      <input type="submit" value="Get Directions" />
+    </form>
+
+    {{ map_html|safe }}
+  </body>
+</html>
